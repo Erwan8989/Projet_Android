@@ -11,14 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-            >
+        >
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="275dp"
             android:inputType="textEmailAddress"
             android:hint="Pseudo"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,9 +39,9 @@
             android:id="@+id/button3"
             android:layout_width="200dp"
             android:layout_height="75dp"
+            android:text="CONNEXION"
             android:layout_marginHorizontal="500dp"
-            android:layout_marginTop="50dp"
-            android:text="CONNEXION" />
+            android:layout_marginTop="50dp" />
 
     </LinearLayout>
 
