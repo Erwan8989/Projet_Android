@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-<<<<<<< HEAD
+
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -43,7 +43,6 @@
 
     </LinearLayout>
 </LinearLayout>
-=======
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
@@ -81,7 +80,6 @@
 
     </LinearLayout>
 
->>>>>>> 3229c58fd19e6740a8d715c19e8c981095d2c923
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
