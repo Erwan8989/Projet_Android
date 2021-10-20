@@ -18,7 +18,7 @@ import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
-  String url ="https://api.github.com/zen";
+  String url ="http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto";
   Button b10;
   TextView textview;
   EditText input;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     b10.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        httpCall("https://api.github.com/zen");
+        httpCall("http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto");
 
         Log.e("Thread tick.", "onClick");
       }
