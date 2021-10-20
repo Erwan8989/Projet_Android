@@ -2,6 +2,7 @@ package com.example.projet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+      input = findViewById(R.id.text);
+      textview = (TextView) findViewById(R.id.text);
 
+      // ***************** Obtenir l'API, et l'afficher *****************
+
+      b10 = (Button) findViewById(R.id.button1);
+
+      b10.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto"); // Mettre son adresse IP
+
+          Log.e("Thread tick.", "onClick");
+        }
+      });
     }
 
   public void openActivity1() { // Fonction qui permet d'aller à l'activité 1
