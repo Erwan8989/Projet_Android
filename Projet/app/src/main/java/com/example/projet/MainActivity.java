@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -20,7 +21,7 @@ import com.android.volley.toolbox.Volley;
 public class MainActivity extends AppCompatActivity {
 
     String url ="http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto";
-    Button b10;
+    Button b1, b2, b10;
     TextView textview;
     EditText input;
 
@@ -55,21 +56,22 @@ public class MainActivity extends AppCompatActivity {
     StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
       new Response.Listener<String>() {
         @Override
-        public void onClick(View v) {
-          openActivity1();
+        public void onResponse(String response) {
+          textview.setText(response);
+          Log.e(this.getClass().toString(), "Request successful!");
         }
-      });
+      }, new Response.ErrorListener() {
+      @Override
+      public void onErrorResponse(VolleyError error) {
+        textview.setText("Erreur");
+        Log.e(this.getClass().toString(), "Erreur!");
+        Log.e("Error: ", error.getMessage());
+      }
+    });
 
-        b2 = (Button) findViewById(R.id.button2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              openActivity2();
-            }
-        });
+    queue.add(stringRequest);
 
-
-    }
+  }
 
   public void openActivity1() { // Fonction qui permet d'aller à l'activité 1
     Intent intent = new Intent(this, identification.class);
