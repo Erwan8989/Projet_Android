@@ -10,18 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    String url = "https://api.github.com/zen";
-    Button b1;
+    Button b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        b1 = (Button) findViewById(R.id.button1);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+        b2 = (Button) findViewById(R.id.button2);
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
               openActivity2();
             }
         });

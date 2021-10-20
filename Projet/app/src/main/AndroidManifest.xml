@@ -22,10 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-      <activity
-        android:name=".identification"
-        android:exported="true">
-      </activity>
         <activity
             android:name=".inscription"
             android:exported="true">
