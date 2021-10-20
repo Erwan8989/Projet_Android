@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
       <activity
-        android:name=".connexion_inscription"
+        android:name=".identification"
         android:exported="true">
       </activity>
         <activity
