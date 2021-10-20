@@ -27,7 +27,7 @@
             android:exported="true">
         </activity>
       <activity
-        android:name=".connexion"
+        android:name=".identification"
         android:exported="true">
       </activity>
     </application>

@@ -1,6 +1,18 @@
 package com.example.projet;
 
-import android.app.Activity;
+import android.os.Bundle;
 
-public class inscription extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class inscription extends AppCompatActivity {
+
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.inscription);
+
+  }
+
 }
