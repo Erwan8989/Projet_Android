@@ -26,6 +26,10 @@
             android:name=".inscription"
             android:exported="true">
         </activity>
+      <activity
+        android:name=".connexion"
+        android:exported="true">
+      </activity>
     </application>
 
 </manifest>
