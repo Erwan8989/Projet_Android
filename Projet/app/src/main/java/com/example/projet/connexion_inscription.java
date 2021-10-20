@@ -1,20 +1,16 @@
 package com.example.projet;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -22,6 +18,7 @@ public class connexion_inscription extends Activity {
 
   String url ="https://api.github.com/zen";
   Button b10;
+  TextView textview;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,7 @@ public class connexion_inscription extends Activity {
 
 
     // ***************** Obtenir l'API, et l'afficher *****************
-
+    textview = (TextView)findViewById(R.id.text);
     b10 = (Button) findViewById(R.id.button10);
 
     b10.setOnClickListener(new View.OnClickListener() {

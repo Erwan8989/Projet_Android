@@ -1,46 +1,50 @@
 package com.example.projet;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class MainActivity<b10> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
   String url ="https://api.github.com/zen";
   Button b10;
+  TextView textview;
+  EditText input;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
 
-      // ***************** Obtenir l'API, et l'afficher *****************
+    input = findViewById(R.id.text);
+    textview = (TextView) findViewById(R.id.text);
 
-      b10 = (Button) findViewById(R.id.button10);
+    // ***************** Obtenir l'API, et l'afficher *****************
 
-      b10.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          httpCall("https://api.github.com/zen");
+    b10 = (Button) findViewById(R.id.button10);
 
-          Log.e("Thread tick.", "onClick");
-        }
-      });
-    }
+    b10.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        httpCall("https://api.github.com/zen");
+
+        Log.e("Thread tick.", "onClick");
+      }
+    });
+  }
 
   public void httpCall(String url) {
 
