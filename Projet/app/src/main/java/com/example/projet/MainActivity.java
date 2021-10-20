@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +19,10 @@ import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1, b2, b10;
-
-    Input input;
+    String url ="http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto";
+    Button b10;
+    TextView textview;
+    EditText input;
 
 
     @Override
