@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Arthur/Desktop/github/Projet_Android/Projet/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Arthur/Desktop/github/Projet_Android/Projet/app/src/main/res/layout/connexion-inscription.xml" value="0.10964912280701754" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/layout/connexion-inscription.xml" value="0.1" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/layout/connexion_inscription.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/layout/identification.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/alexa/AndroidStudioProjects/Projet Android/Projet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
       </map>
     </option>
   </component>
