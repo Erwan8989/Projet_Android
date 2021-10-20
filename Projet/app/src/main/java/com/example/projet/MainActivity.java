@@ -17,8 +17,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-      b1 = (Button) findViewById(R.id.button1);
-      b1.setOnClickListener(new View.OnClickListener() {
+
+    input = findViewById(R.id.text);
+    textview = (TextView) findViewById(R.id.text);
+
+    // ***************** Obtenir l'API, et l'afficher *****************
+
+    b10 = (Button) findViewById(R.id.button10);
+
+    b10.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto"); // Mettre son adresse IP
+
+        Log.e("Thread tick.", "onClick");
+      }
+    });
+  }
+
+  public void httpCall(String url) {
+
+    RequestQueue queue = Volley.newRequestQueue(this);
+
+    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+      new Response.Listener<String>() {
         @Override
         public void onClick(View v) {
           openActivity1();
