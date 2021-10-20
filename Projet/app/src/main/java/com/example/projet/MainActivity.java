@@ -1,14 +1,12 @@
 package com.example.projet;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
-class connexion_inscription extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
 
     String url ="https://api.github.com/zen";
     Button b10;
@@ -16,7 +14,7 @@ class connexion_inscription extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connexion_inscription);
+        setContentView(R.layout.activity_main);
 
     }
 
