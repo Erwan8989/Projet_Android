@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75dp"
             android:layout_marginTop="275dp"
-            android:inputType="string"
+            android:inputType="textEmailAddress"
             android:hint="Pseudo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
