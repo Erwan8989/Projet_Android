@@ -1,6 +1,8 @@
 package com.example.projet;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,57 +18,25 @@ import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
-  String url ="http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto";
-  Button b10;
-  TextView textview;
-  EditText input;
+    String url = "https://api.github.com/zen";
+    Button b1;
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1 = (Button) findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+              openActivity2();
+            }
+        });
+    }
 
-    input = findViewById(R.id.text);
-    textview = (TextView) findViewById(R.id.text);
-
-    // ***************** Obtenir l'API, et l'afficher *****************
-
-    b10 = (Button) findViewById(R.id.button10);
-
-    b10.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto");
-
-        Log.e("Thread tick.", "onClick");
-      }
-    });
-  }
-
-  public void httpCall(String url) {
-
-    RequestQueue queue = Volley.newRequestQueue(this);
-
-    StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-      new Response.Listener<String>() {
-        @Override
-        public void onResponse(String response) {
-          textview.setText(response);
-          Log.e(this.getClass().toString(), "Request successful!");
-        }
-      }, new Response.ErrorListener() {
-      @Override
-      public void onErrorResponse(VolleyError error) {
-        textview.setText("Erreur");
-        Log.e(this.getClass().toString(), "Erreur!");
-        Log.e("Error: ", error.getMessage());
-      }
-    });
-
-    queue.add(stringRequest);
-
-  }
-
-
+    public void openActivity2() { // Fonction qui permet d'aller à l'activité 2
+        Intent intent = new Intent(this, connexion_inscription.class);
+        startActivity(intent);
+    }
 }
