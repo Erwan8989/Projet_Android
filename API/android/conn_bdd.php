@@ -1,25 +1,28 @@
 <?php
-
 $user = "root";
 $pass = "";
 
 
 
     $bdd = new PDO('mysql:host=localhost;dbname=projet_android', $user, $pass);
-   
+    
+    $insert= $bdd->prepare("INSERT INTO utilisateur (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)");
 
-    // try {
-    //     $bdd = new PDO('mysql:host=localhost;dbname=projet_android', $user, $pass);
-    //     foreach($bdd->query('SELECT * from utilisateur') as $row) {
-    //         print_r($row);
-    //     }
-    //     $bdd = null;
-
-    // } catch (PDOException $e) {
-    //     print "Erreur !: " . $e->getMessage() . "<br/>";
-    //     die();
-    // }
-
+    $insert->execute(array(
+        ':pseudo' => $_GET["pseudo"],
+        ':mail' => $_GET["mail"],
+        ':mdp' => $_GET["mdp"]));
 
     
-?>
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        {
+            $url = "https";
+        }
+        else
+        {
+            $url = "http"; 
+        }  
+        $url .= "://"; 
+        $url .= $_SERVER['HTTP_HOST']; 
+        $url .= $_SERVER['REQUEST_URI']; 
+        echo $url
