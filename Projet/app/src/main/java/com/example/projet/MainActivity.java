@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     b10.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        httpCall("http://localhost/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto");
+        httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto");
 
         Log.e("Thread tick.", "onClick");
       }
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
       public void onErrorResponse(VolleyError error) {
         textview.setText("Erreur");
         Log.e(this.getClass().toString(), "Erreur!");
+        Log.e("Error: ", error.getMessage());
       }
     });
 
