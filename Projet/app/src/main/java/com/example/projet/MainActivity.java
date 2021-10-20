@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     b10.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto");
+        httpCall("http://10.60.21.217/projet_android/conn_bdd.php?pseudo=tata&mail=oiuaz&mdp=toto"); // Mettre son adresse IP
 
         Log.e("Thread tick.", "onClick");
       }
