@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Projet</string>
-    <string name="activity_main">Connexion</string>
-    <string name="identification">S\'identifier</string>
+    <string name="activity_main">WishTchat | S\'identifier</string>
+    <string name="identification">WishTchat | S\'identifier</string>
 </resources>
