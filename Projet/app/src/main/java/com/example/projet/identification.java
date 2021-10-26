@@ -21,7 +21,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
   _btnLog=findViewById(R.id.button3);
   _addMail=findViewById(R.id.ConnexionAdresseMail);
-  _addPassword=findViewById(R.id.editTextTextPassword2);
+  _addPassword=findViewById(R.id.ConnexionPassword);
 
   _btnLog.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -29,6 +29,7 @@ protected void onCreate(Bundle savedInstanceState) {
       String user_name=_addMail.getText().toString();
       String pass_word=_addPassword.getText().toString();
       String type="login";
+
       BackgroundTask backgroundTask= new BackgroundTask(getApplicationContext());
       backgroundTask.execute(type, user_name, pass_word);
 

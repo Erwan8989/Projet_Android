@@ -13,7 +13,8 @@
         android:label="@string/activity_main"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Projet">
+        android:theme="@style/Theme.Projet"
+        android:networkSecurityConfig="@xml/network_security_config">
 
         <activity
             android:name=".MainActivity"

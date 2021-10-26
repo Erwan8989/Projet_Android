@@ -28,8 +28,8 @@ public class BackgroundTask extends AsyncTask <String, String, String> {
 @Override
 protected String doInBackground(String... strings) {
         String type=strings[0];
-        String loginURL="http://127.0.0.1/login.php";             // Mettre son adresse public
-        String regURL="http://127.0.0.1/insc.php";                 // Mettre son adresse public
+        String loginURL="http://192.168.1.16/Android_project/login.php";             // Mettre son adresse ip
+        String regURL="http://192.168.1.16/Android_project/insc.php";                 // Mettre son adresse ip
 
         if (type.equals("reg")){
         String email=strings[1];
