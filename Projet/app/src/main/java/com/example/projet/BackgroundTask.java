@@ -22,7 +22,7 @@ public class BackgroundTask extends AsyncTask <String, String, String> {
         @SuppressLint("StaticFieldLeak")
         Context context;
         BackgroundTask(Context ctx){
-        context = ctx;
+        this.context = ctx;
         }
 
 @Override
@@ -32,46 +32,50 @@ protected String doInBackground(String... strings) {
         String regURL="http://127.0.0.1/insc.php";                 // Mettre son adresse public
 
         if (type.equals("reg")){
-        String email= strings[1];
+        String email=strings[1];
         String username=strings[2];
         String password=strings[3];
 
         try{
                 URL url= new URL(regURL);
-        try{
-                HttpURLConnection httpURLConnection= (HttpURLConnection)url.openConnection();
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setDoInput(true);
-                OutputStream outputStream= httpURLConnection.getOutputStream();
-                OutputStreamWriter outputStreamWriter= new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
-                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+                try{
+                        HttpURLConnection httpURLConnection= (HttpURLConnection)url.openConnection();
+                        httpURLConnection.setRequestMethod("POST");
+                        httpURLConnection.setDoOutput(true);
+                        httpURLConnection.setDoInput(true);
+                        OutputStream outputStream= httpURLConnection.getOutputStream();
+                        OutputStreamWriter outputStreamWriter= new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+                        BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-                String insert_data = "&amp;"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")+
-                "&amp;"+URLEncoder.encode("username", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
-                "&amp;"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
+                        String insert_data = "&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")+
+                        "&"+URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
+                        "&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
 
-                bufferedWriter.write(insert_data);
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                InputStream inputStream= httpURLConnection.getInputStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String result="";
-                String line="";
-                StringBuilder stringBuilder= new StringBuilder();
-                while ((line=bufferedReader.readLine())!=null){
-                stringBuilder.append(line).append("\n");
+                        bufferedWriter.write(insert_data);
+                        bufferedWriter.flush();
+                        bufferedWriter.close();
 
-                }
-                result=stringBuilder.toString();
-                bufferedReader.close();
-                inputStream.close();
-                httpURLConnection.disconnect();
-                return result;
-        } catch (IOException e) {
+                        InputStream inputStream= httpURLConnection.getInputStream();
+
+                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1);
+                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                        String result="";
+                        String line="";
+                        StringBuilder stringBuilder= new StringBuilder();
+
+                        while ((line=bufferedReader.readLine())!=null){
+                        stringBuilder.append(line).append("\n"); }
+
+                        result=stringBuilder.toString();
+                        bufferedReader.close();
+                        inputStream.close();
+                        httpURLConnection.disconnect();
+                        return result;
+
+                } catch (IOException e) {
                 e.printStackTrace();
-        }
+                }
         } catch (MalformedURLException e) {
                 e.printStackTrace();
         }
@@ -80,41 +84,41 @@ protected String doInBackground(String... strings) {
                 String pass_word = strings[2];
                 try {
                         URL url = new URL(loginURL);
-                try {
-                        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                        httpURLConnection.setRequestMethod("POST");
-                        httpURLConnection.setDoOutput(true);
-                        httpURLConnection.setDoInput(true);
-                        OutputStream outputStream = httpURLConnection.getOutputStream();
-                        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
-                        BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+                        try {
+                                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                                httpURLConnection.setRequestMethod("POST");
+                                httpURLConnection.setDoOutput(true);
+                                httpURLConnection.setDoInput(true);
+                                OutputStream outputStream = httpURLConnection.getOutputStream();
+                                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+                                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-                        String login_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") +
-                        "&amp;" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(pass_word, "UTF-8");
+                                String login_data = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") +
+                                "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(pass_word, "UTF-8");
 
-                        bufferedWriter.write(login_data);
-                        bufferedWriter.flush();
-                        bufferedWriter.close();
-                        InputStream inputStream = httpURLConnection.getInputStream();
-                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1);
-                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                                bufferedWriter.write(login_data);
+                                bufferedWriter.flush();
+                                bufferedWriter.close();
+                                InputStream inputStream = httpURLConnection.getInputStream();
+                                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1);
+                                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-                        String result = "";
-                        String line = "";
-                        StringBuilder stringBuilder = new StringBuilder();
+                                String result = "";
+                                String line = "";
+                                StringBuilder stringBuilder = new StringBuilder();
 
-                        while ((line = bufferedReader.readLine()) != null) {
-                        stringBuilder.append(line).append("\n"); }
+                                while ((line = bufferedReader.readLine()) != null) {
+                                stringBuilder.append(line).append("\n"); }
 
-                        result = stringBuilder.toString();
-                        bufferedReader.close();
-                        inputStream.close();
-                        httpURLConnection.disconnect();
-                        return result;
+                                result = stringBuilder.toString();
+                                bufferedReader.close();
+                                inputStream.close();
+                                httpURLConnection.disconnect();
+                                return result;
 
-                } catch (IOException e) {
-                        e.printStackTrace();
-                }
+                        } catch (IOException e) {
+                        e.printStackTrace(); }
+
                 } catch (MalformedURLException e) {
                         e.printStackTrace();
                 }
