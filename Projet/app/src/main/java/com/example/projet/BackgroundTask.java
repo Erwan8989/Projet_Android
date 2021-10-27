@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -18,7 +20,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class BackgroundTask extends AsyncTask <String, String, String> {
+public abstract class BackgroundTask extends AsyncTask<String, String, String> {
         @SuppressLint("StaticFieldLeak")
         Context context;
         BackgroundTask(Context ctx){
@@ -26,15 +28,15 @@ public class BackgroundTask extends AsyncTask <String, String, String> {
         }
 
 @Override
-protected String doInBackground(String... strings) {
-        String type=strings[0];
-        String loginURL="http://127.0.0.1/android/login.php";             // Mettre son adresse ip
-        String regURL="http://127.0.0.1/android/logon.php";                 // Mettre son adresse ip
+protected String doInBackground(Text... strings) {
+        Text type=strings[0];
+        String loginURL="http://10.0.2.2/android/login.php";             // Mettre son adresse ip
+        String regURL="http://10.0.2.2/android/insc.php";                 // Mettre son adresse ip
 
         if (type.equals("reg")){
-        String email=strings[1];
-        String username=strings[2];
-        String password=strings[3];
+                Text email=strings[1];
+                Text username=strings[2];
+                Text password=strings[3];
 
         try{
                 URL url= new URL(regURL);
@@ -47,9 +49,9 @@ protected String doInBackground(String... strings) {
                         OutputStreamWriter outputStreamWriter= new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
                         BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-                        String insert_data = "&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")+
-                        "&"+URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+
-                        "&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
+                        String insert_data = "&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(String.valueOf(email), "UTF-8")+
+                        "&"+URLEncoder.encode("pseudo", "UTF-8")+"="+URLEncoder.encode(String.valueOf(username), "UTF-8")+
+                        "&"+URLEncoder.encode("mdp", "UTF-8")+"="+URLEncoder.encode(String.valueOf(password), "UTF-8");
 
                         bufferedWriter.write(insert_data);
                         bufferedWriter.flush();
@@ -80,8 +82,8 @@ protected String doInBackground(String... strings) {
                 e.printStackTrace();
         }
         } else if(type.equals("login")) {
-                String user_name = strings[1];
-                String pass_word = strings[2];
+                Text user_name = strings[1];
+                Text pass_word = strings[2];
                 try {
                         URL url = new URL(loginURL);
                         try {
@@ -93,8 +95,8 @@ protected String doInBackground(String... strings) {
                                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
                                 BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-                                String login_data = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") +
-                                "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(pass_word, "UTF-8");
+                                String login_data = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(user_name), "UTF-8") +
+                                "&" + URLEncoder.encode("mdp", "UTF-8") + "=" + URLEncoder.encode(String.valueOf(pass_word), "UTF-8");
 
                                 bufferedWriter.write(login_data);
                                 bufferedWriter.flush();
