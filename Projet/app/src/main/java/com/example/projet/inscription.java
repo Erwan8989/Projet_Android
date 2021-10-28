@@ -1,23 +1,27 @@
 package com.example.projet;
 
-import android.annotation.SuppressLint;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 
 public class inscription extends AppCompatActivity {
 
-  TextInputEditText Pseudo, AdresseMail, mdp;
+  android.widget.EditText Pseudo, AddressMail, mdp;
   Button b3;
-
+  TextView titles;
+  ProgressBar progressBar;
 
 
   @Override
@@ -26,49 +30,77 @@ public class inscription extends AppCompatActivity {
     setContentView(R.layout.inscription);
 
     Pseudo = findViewById(R.id.InscriptionPseudo);
-    AdresseMail = findViewById(R.id.inscriptionAdresseMail);
+    AddressMail = findViewById(R.id.inscriptionAdresseMail);
     mdp = findViewById(R.id.MotDePasse);
     b3 = findViewById(R.id.button3);
+    progressBar = findViewById(R.id.progress);
+    titles = findViewById(R.id.signUp);
 
-    b3.setOnClickListener(new View.OnClickListener() {
-      @override
-      public void onClick (View v){
-
-        String pseudo, email, password;
-        pseudo = String.valueOf(Pseudo.getText());
-
-        //Start ProgressBar first (Set visibility VISIBLE)
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-          @Override
-          public void run() {
-            //Starting Write and Read data with URL
-            //Creating array for parameters
-            String[] field = new String[3];
-            field[0] = "pseudo";
-            field[1] = "email";
-            field[2] = "password";
-
-            //Creating array for data
-            String[] data = new String[2];
-            data[0] = "data-1";
-            data[1] = "data-2";
-            PutData putData = new PutData("https://projects.vishnusivadas.com/AdvancedHttpURLConnection/putDataTest.php", "POST", field, data);
-            if (putData.startPut()) {
-              if (putData.onComplete()) {
-                String result = putData.getResult();
-                //End ProgressBar (Set visibility to GONE)
-              }
-            }
-            //End Write and Read data with URL
-          }
-        });
-
+    titles.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), inscription.class);
+        startActivity(intent);
+        finish();
       }
     });
 
 
+    b3.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
 
+        String pseudo, email, password;
+        pseudo = String.valueOf(Pseudo.getText());
+        email = String.valueOf(AddressMail.getText());
+        password = String.valueOf(mdp.getText());
+
+        // Verification of the type of the value entered in the EditText
+        if (!pseudo.equals("") && !email.equals("") && !password.equals("")) {
+          //Start ProgressBar first (Set visibility VISIBLE)
+          progressBar.setVisibility(View.VISIBLE);
+          Handler handler = new Handler(Looper.getMainLooper());
+          handler.post(new Runnable() {
+            @Override
+            public void run() {
+              //Starting Write and Read data with URL
+              //Creating array for parameters
+              String[] field = new String[3];
+              field[0] = "pseudo";
+              field[1] = "email";
+              field[2] = "password";
+
+              //Creating array for data
+              String[] data = new String[3];
+              data[0] = "pseudo";
+              data[1] = "email";
+              data[2] = "password";
+
+              PutData putData = new PutData("http://192.168.1.16/Chat_Android/signup.php", "POST", field, data);
+              if (putData.startPut()) {
+                if (putData.onComplete()) {
+                  progressBar.setVisibility(View.GONE);
+
+                  String result = putData.getResult();
+
+                  if (result.equals("Sign Up Success")) {
+                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                    Intent identification = new Intent(getApplicationContext(), identification.class);
+                    startActivity(identification);
+                    finish();
+                  } else {
+
+                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+
+                  }
+                }
+              }
+            }
+          });
+
+        } else {
+          Toast.makeText(getApplicationContext(), "All fields required", Toast.LENGTH_SHORT).show();
+        }
       }
     });
   }
