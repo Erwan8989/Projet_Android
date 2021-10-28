@@ -20,7 +20,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75dp"
-            android:layout_marginTop="275dp"
+            android:layout_marginTop="200dp"
             android:inputType="text"
             android:hint="@string/pseudo"
             android:drawableRight="@drawable/ic_user"
@@ -72,12 +72,20 @@
             android:layout_marginHorizontal="500dp"
             android:layout_marginTop="50dp" />
 
-        <EditText
+        <Button
             android:id="@+id/signUp"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Déjà inscrit? Connectez-vous ! "
-            android:layout_gravity="center|bottom"/>
+            android:layout_marginTop="40dp"
+            android:text="@string/here"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
+            android:clickable="true"
+            android:textIsSelectable="true"
+            android:textColorLink="@color/blue"
+            android:textSize="15dp"
+            />
 
 
 

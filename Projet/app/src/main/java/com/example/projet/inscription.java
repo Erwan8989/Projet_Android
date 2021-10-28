@@ -39,7 +39,7 @@ public class inscription extends AppCompatActivity {
     titles.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), inscription.class);
+        Intent intent = new Intent(getApplicationContext(), identification.class);
         startActivity(intent);
         finish();
       }
@@ -57,7 +57,6 @@ public class inscription extends AppCompatActivity {
 
         // Verification of the type of the value entered in the EditText
         if (!pseudo.equals("") && !email.equals("") && !password.equals("")) {
-          //Start ProgressBar first (Set visibility VISIBLE)
           progressBar.setVisibility(View.VISIBLE);
           Handler handler = new Handler(Looper.getMainLooper());
           handler.post(new Runnable() {
@@ -91,7 +90,6 @@ public class inscription extends AppCompatActivity {
                   } else {
 
                     Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
                   }
                 }
               }

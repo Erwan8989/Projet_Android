@@ -33,7 +33,7 @@ public class identification extends AppCompatActivity {
           mdp = findViewById(R.id.ConnexionPassword);
           b4 = findViewById(R.id.button3);
           progressBar = findViewById(R.id.progress);
-          titles = findViewById(R.id.signUp);
+          titles = findViewById(R.id.loginText);
 
           titles.setOnClickListener(new View.OnClickListener() {
               @Override
