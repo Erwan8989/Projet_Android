@@ -1,7 +1,8 @@
 <resources>
-    <string name="activity_main">WishTchat</string>
+    <string name="main">WishTchat</string>
     <string name="login">WishTchat | Se connecter</string>
     <string name="Singup">WishTchat | S\'inscrire</string>
+
 
     <string name="pseudo">Pseudo</string>
     <string name="adresse_mail">Adresse mail</string>
