@@ -39,7 +39,7 @@ public class inscription extends AppCompatActivity {
     titles.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), inscription.class);
+        Intent intent = new Intent(getApplicationContext(), identification.class);
         startActivity(intent);
         finish();
       }
@@ -76,7 +76,7 @@ public class inscription extends AppCompatActivity {
               data[1] = email;
               data[2] = password;
 
-              PutData putData = new PutData("http://192.168.1.136/Chat_Android/signup.php", "POST", field, data);
+              PutData putData = new PutData("http://192.168.1.136/Chat_Android/signup.php", "POST", field, data);  // Mettre son ip
               if (putData.startPut()) {
                 if (putData.onComplete()) {
                   progressBar.setVisibility(View.GONE);
