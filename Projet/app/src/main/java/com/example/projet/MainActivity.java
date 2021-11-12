@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,16 +34,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
-  public void openActivity1() { // Fonction qui permet d'aller à l'activité 1
-    Intent intent = new Intent(this, identification.class);
-    startActivity(intent);
+
+  public void openActivity1() {
+    Intent identification = new Intent(this, identification.class);
+    startActivity(identification);
+      finish();
   }
 
-    public void openActivity2() { // Fonction qui permet d'aller à l'activité 2
-        Intent intent2 = new Intent(this, inscription.class);
-        startActivity(intent2);
+    public void openActivity2() {
+        Intent inscription = new Intent(this, inscription.class);
+        startActivity(inscription);
+        finish();
     }
 }
