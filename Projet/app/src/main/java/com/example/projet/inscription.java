@@ -34,6 +34,7 @@ public class inscription extends AppCompatActivity {
     mdp = findViewById(R.id.MotDePasse);
     b3 = findViewById(R.id.button3);
     progressBar = findViewById(R.id.progress);
+
     titles = findViewById(R.id.signUp);
 
     titles.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +45,7 @@ public class inscription extends AppCompatActivity {
         finish();
       }
     });
+
 
 
     b3.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +78,7 @@ public class inscription extends AppCompatActivity {
               data[1] = email;
               data[2] = password;
 
-              PutData putData = new PutData("http://192.168.1.136/Chat_Android/signup.php", "POST", field, data);  // Mettre son ip
+              PutData putData = new PutData("http://192.168.1.16/Chat_Android/signup.php", "POST", field, data);  // Mettre son ip
               if (putData.startPut()) {
                 if (putData.onComplete()) {
                   progressBar.setVisibility(View.GONE);
