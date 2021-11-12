@@ -69,8 +69,8 @@ public class identification extends AppCompatActivity {
 
                                 //Creating array for data
                                 String[] data = new String[2];
-                                data[0] = "email";
-                                data[1] = "mdp";
+                                data[0] = email;
+                                data[1] = password;
 
                                 PutData putData = new PutData("http://192.168.1.16/Chat_Android/login.php", "POST", field, data);
                                 if (putData.startPut()) {

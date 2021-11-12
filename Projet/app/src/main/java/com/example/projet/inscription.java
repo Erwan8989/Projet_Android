@@ -72,9 +72,9 @@ public class inscription extends AppCompatActivity {
 
               //Creating array for data
               String[] data = new String[3];
-              data[0] = "pseudo";
-              data[1] = "email";
-              data[2] = "mdp";
+              data[0] = pseudo;
+              data[1] = email;
+              data[2] = password;
 
               PutData putData = new PutData("http://192.168.1.136/Chat_Android/signup.php", "POST", field, data);
               if (putData.startPut()) {
