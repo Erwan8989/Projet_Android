@@ -65,12 +65,12 @@ public class identification extends AppCompatActivity {
                                 //Creating array for parameters
                                 String[] field = new String[2];
                                 field[0] = "email";
-                                field[1] = "password";
+                                field[1] = "mdp";
 
                                 //Creating array for data
                                 String[] data = new String[2];
                                 data[0] = "email";
-                                data[1] = "password";
+                                data[1] = "mdp";
 
                                 PutData putData = new PutData("http://192.168.1.16/Chat_Android/login.php", "POST", field, data);
                                 if (putData.startPut()) {
