@@ -11,7 +11,7 @@ public class conversations extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.conversations);
+        setContentView(R.layout.conversations);
 
     }
 
