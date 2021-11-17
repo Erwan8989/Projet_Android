@@ -56,8 +56,7 @@
         <activity
             android:name=".conversations_liste"
             android:exported="true"
-            android:label="@string/main"
-            tools:ignore="Instantiatable">
+            android:label="@string/main">
         </activity>
     </application>
 

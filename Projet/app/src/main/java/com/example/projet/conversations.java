@@ -43,8 +43,8 @@ public class conversations extends AppCompatActivity {
     }
 
     public void openActivity5() {
-        Intent parametres_informations_personnelles = new Intent(this, parametres_informations_personnelles.class);
-        startActivity(parametres_informations_personnelles);
+        Intent conversations_liste = new Intent(this, conversations_liste.class);
+        startActivity(conversations_liste);
         finish();
     }
 }
