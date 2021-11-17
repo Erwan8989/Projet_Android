@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.projet">
 
   <uses-permission android:name="android.permission.INTERNET" />
@@ -35,9 +36,11 @@
         </activity>
 
         <activity
-        android:name=".identification"
-        android:exported="true">
-      </activity>
+            android:name=".identification"
+            android:exported="true"
+            android:label="@string/login">
+        </activity>
+
         <activity
             android:name=".conversations"
             android:exported="true">
@@ -50,7 +53,12 @@
         android:name=".parametres_informations_personnelles"
         android:exported="true">
       </activity>
-</application>
-
+        <activity
+            android:name=".conversations_liste"
+            android:exported="true"
+            android:label="@string/main"
+            tools:ignore="Instantiatable">
+        </activity>
+    </application>
 
 </manifest>
