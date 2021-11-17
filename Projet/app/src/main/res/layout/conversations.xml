@@ -4,23 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity=""
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text=""
+            android:drawableEnd="@drawable/reglage"
+            android:background="@drawable/arrondir"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="700dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="600dp"/>
+
+        <Button
         android:id="@+id/button"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text=""
         android:drawableEnd="@drawable/nouv_conv"
         android:background="@drawable/arrondir"
-        tools:layout_editor_absoluteX="300dp"
-        tools:layout_editor_absoluteY="700dp" />
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="600dp"
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:text=""
-        android:drawableEnd="@drawable/reglage"
-        android:background="@drawable/arrondir"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="700dp" />
+         />
+
+
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
