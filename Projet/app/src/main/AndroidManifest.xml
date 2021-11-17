@@ -34,6 +34,10 @@
          android:name=".parametres"
          android:exported="true">
       </activity>
-    </application>
+      <activity
+        android:name=".parametres_informations_personnelles"
+        android:exported="true">
+      </activity>
+</application>
 
 </manifest>
