@@ -11,4 +11,5 @@
     <string name="ici">Pas encore inscrit ? Inscrivez-vous ici !</string>
     <string name="activity_main">WishTchat | S\'identifier</string>
     <string name="liste_conversation">Wishtchat</string>
+    <string name="activity_main">WishTchat</string>
 </resources>
