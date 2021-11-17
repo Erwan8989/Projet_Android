@@ -30,6 +30,11 @@
         android:name=".identification"
         android:exported="true">
       </activity>
+        <activity
+            android:name=".conversations"
+            android:exported="true">
+        </activity>
     </application>
+
 
 </manifest>
