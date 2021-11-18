@@ -1,4 +1,5 @@
 <?php
+
 require "DataBaseConfig.php";
 
 class DataBase
@@ -46,6 +47,7 @@ class DataBase
             $dbpassword = $row['mdp'];
             if ($dbusername == $email && password_verify($password, $dbpassword)) {
                 $login = true;
+    
             } else $login = false;
         } else $login = false;
 
@@ -65,6 +67,45 @@ class DataBase
         } else return false;
     }
 
-}
+//     function GetData ($message, $data)
+
+    // {
+//         $message = $this->prepareData($message);
+//         $data = $this->prepareData($data);
+//         $this->sql =
+//             "SELECT * FROM " . $table . " (message, date) VALUES ('" . $messsage . "','" . $date . "')";
+
+//             if (mysqli_query($this->connect, $this->sql)) {
+//                 while ($query -> fetch()){
+//                     $temp = array();
+//                     $temp ['id'] = $id;
+//                     $temp ['message'] = $message;
+//                     $temp ['date'] = $date;
+//                     array_push($data, $temp);
+//                 }
+//             return true;
+//             }     
+//         else return false;
+//     }
+    
+
+//     function SetData ($message, $date)
+//     {
+//         $message = $this->prepareData($message);
+//         $data = $this->prepareData($data);
+//         $this->sql =
+//             "INSERT INTO " . $table . " (message, date) VALUES ('" . $messsage . "','" . $date . "')";
+
+//             if (mysqli_query($this->connect, $this->sql)) {
+//                 // $response = new GetData();
+//                 // $response -> sucess = 1;
+//                 // $response -> message = "envoi réussi";
+//                 // die(json_encode($response));
+//             return true;
+//             }     
+//         else return false;
+//     }
+ }
+
 
 ?>
