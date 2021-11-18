@@ -34,9 +34,9 @@ public class identification extends AppCompatActivity {
           b4 = findViewById(R.id.button3);
           progressBar = findViewById(R.id.progress);
 
-          /*
 
-          titles = findViewById(R.id.signUp);
+
+          titles = findViewById(R.id.loginText);
 
           titles.setOnClickListener(new View.OnClickListener() {
               @Override
@@ -47,7 +47,7 @@ public class identification extends AppCompatActivity {
               }
           });
 
-           */
+           
 
 
             b4.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +77,7 @@ public class identification extends AppCompatActivity {
                                 data[0] = email;
                                 data[1] = password;
 
-                                PutData putData = new PutData("http://192.168.1.16/Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip
+                                PutData putData = new PutData("http://10.60.20.255/Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);

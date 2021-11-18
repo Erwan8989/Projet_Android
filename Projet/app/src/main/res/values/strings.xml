@@ -7,6 +7,6 @@
     <string name="pseudo">Pseudo</string>
     <string name="adresse_mail">Adresse mail</string>
     <string name="mot_de_passe">Mot de Passe</string>
-    <string name="here">Déjà inscrit ? Connectez-vous <u>ici !</u></string>
-    <string name="ici">Pas encore inscrit ? inscrivez-vous <u>là !</u></string>
+    <string name="here">Déjà inscrit ? Connectez-vous ici !</string>
+    <string name="ici">Pas encore inscrit ? Inscrivez-vous ici !</string>
 </resources>
