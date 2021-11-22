@@ -17,8 +17,6 @@
             android:text=""
             android:drawableEnd="@drawable/reglage"
             android:background="@drawable/arrondir"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="700dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="600dp"/>
 
