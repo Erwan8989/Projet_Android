@@ -9,7 +9,6 @@ public class parametres_informations_personnelles extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
