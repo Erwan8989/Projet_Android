@@ -41,9 +41,9 @@
             android:id="@+id/valider"
             android:layout_width="200dp"
             android:layout_height="75dp"
-            android:text="VALIDER"
             android:layout_marginHorizontal="500dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:text="VALIDER" />
 
         <TextView
             android:id="@+id/textView"

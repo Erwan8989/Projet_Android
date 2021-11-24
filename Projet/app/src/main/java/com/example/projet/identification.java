@@ -78,7 +78,7 @@ public class identification extends AppCompatActivity {
                                 data[0] = email;
                                 data[1] = password;
 
-                                PutData putData = new PutData("http://192.168.121.1//Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip
+                                PutData putData = new PutData("http://192.168.56.1/Chat_Android/login.php", "POST", field, data);  // Mettre son adrr ip
                                 if (putData.startPut()) {
                                     if (putData.onComplete()) {
                                         progressBar.setVisibility(View.GONE);
