@@ -3,6 +3,7 @@ package com.example.projet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -46,5 +47,12 @@ public class conversations extends AppCompatActivity {
         Intent conversations_liste = new Intent(this, conversations_liste.class);
         startActivity(conversations_liste);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 }

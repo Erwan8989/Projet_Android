@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class parametres extends AppCompatActivity {
 
-    Button b6;
+    Button b6, b8;
 
 
     @Override
@@ -25,6 +25,14 @@ public class parametres extends AppCompatActivity {
                 openActivity6();
             }
         });
+
+        b8 = (Button) findViewById(R.id.button8);
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity8();
+            }
+        });
         }
 
     public void openActivity6() {
@@ -32,4 +40,15 @@ public class parametres extends AppCompatActivity {
         startActivity(parametres_informations_personnelles);
         finish();
     }
+
+    public void openActivity8() {
+        Intent MainActivity = new Intent(this, MainActivity.class);
+        startActivity(MainActivity);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, conversations.class);
+        startActivity(intent);}
 }

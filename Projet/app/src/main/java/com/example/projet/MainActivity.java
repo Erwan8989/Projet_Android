@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1, b2, b3;
+    Button b1, b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
