@@ -20,6 +20,9 @@ class DataBase
         $this->servername = $dbc->servername;
         $this->username = $dbc->username;
         $this->password = $dbc->password;
+        // $this->messages = $dbc->messages;
+        // $this->date = $dbc->date;
+
         $this->databasename = $dbc->databasename;
     }
 
@@ -63,6 +66,17 @@ class DataBase
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
         } else return false;
+    }
+
+    function getData ($table, $messages, $date)
+    {
+        $messages = $this->prepareData($messages);
+        $dates = $this->prepareData($dates);
+        $this->sql = "SELECT * FROM . $table . WHERE id = 1";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        // $result = $conn->query($sql);
+
     }
 
 }
