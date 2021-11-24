@@ -1,7 +1,9 @@
 package com.example.projet;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,4 +19,11 @@ public class conversations_liste extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conversations_liste);
     };
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, conversations.class);
+        startActivity(intent);
+
+    }
 }
