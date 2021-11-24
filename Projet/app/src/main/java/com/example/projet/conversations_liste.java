@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,19 +20,21 @@ import com.android.volley.toolbox.Volley;
 public class conversations_liste extends AppCompatActivity {
 
   TextView textview;
-
-
+  Button b20;
+  EditText input;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conversations_liste);
 
-      b20 = (Button) findViewById(R.id.bouton20);
+      input = findViewById(R.id.text);
+      textview = (TextView)findViewById(R.id.text);
+      b20 = (Button) findViewById(R.id.button20);
 
       b20.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          httpCall("https://api.github.com/zen");
+          httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
 
           Log.e("Thread tick.", "onClick");
         }
@@ -46,6 +49,8 @@ public class conversations_liste extends AppCompatActivity {
       new Response.Listener<String>() {
         @Override
         public void onResponse(String response) {
+          textview.setSingleLine(false);
+          textview.setLines(99);
           textview.setText(response);
           Log.e(this.getClass().toString(), "Request successful!");
         }
