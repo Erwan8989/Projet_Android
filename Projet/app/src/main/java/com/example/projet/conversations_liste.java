@@ -31,14 +31,35 @@ public class conversations_liste extends AppCompatActivity {
       textview = (TextView)findViewById(R.id.text);
       b20 = (Button) findViewById(R.id.button20);
 
-      b20.setOnClickListener(new View.OnClickListener() {
+      /*b20.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
+          //httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
 
           Log.e("Thread tick.", "onClick");
         }
+      });*/
+
+      b20.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          Thread background = new Thread(new Runnable() {
+            public void run() {
+              httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
+              Log.e("Thread test.", "Ceci est une erreur !");
+
+              try {
+                Thread.sleep(3000);
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
+            }
+          });
+          new Thread(background).start();
+
+        }
       });
+
     };
 
   public void httpCall(String url) {
@@ -66,3 +87,4 @@ public class conversations_liste extends AppCompatActivity {
 
   }
 }
+
