@@ -37,12 +37,7 @@ public class conversations_liste extends AppCompatActivity {
 
     };
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, conversations.class);
-        startActivity(intent);
 
-    }
     // Thread qui s'actualise toutes les secondes pour mettre à jour la liste des messages
   public void get() {
       Thread background = new Thread(new Runnable() {
@@ -88,6 +83,13 @@ public class conversations_liste extends AppCompatActivity {
     });
 
     queue.add(stringRequest);
+
+  }
+
+  @Override
+  public void onBackPressed() {
+    Intent intent = new Intent(this, conversations.class);
+    startActivity(intent);
 
   }
 }
