@@ -3,7 +3,6 @@ package com.example.projet;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,38 +28,36 @@ public class conversations_liste extends AppCompatActivity {
 
       input = findViewById(R.id.text);
       textview = (TextView)findViewById(R.id.text);
-      b20 = (Button) findViewById(R.id.button20);
 
-      /*b20.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          //httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
+      // Demarrage du thread pour actualiser les messages
+      get();
 
-          Log.e("Thread tick.", "onClick");
-        }
-      });*/
 
-      b20.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          Thread background = new Thread(new Runnable() {
-            public void run() {
-              httpCall("http://192.168.56.1/Chat_Android/getmessage.php");
-              Log.e("Thread test.", "Ceci est une erreur !");
-
-              try {
-                Thread.sleep(3000);
-              } catch (InterruptedException e) {
-                e.printStackTrace();
-              }
-            }
-          });
-          new Thread(background).start();
-
-        }
-      });
 
     };
+
+    // Thread qui s'actualise toutes les secondes pour mettre à jour la liste des messages
+  public void get() {
+      Thread background = new Thread(new Runnable() {
+        public void run() {
+
+          boolean var;
+          while (var = true){
+            try {
+              Thread.sleep(1000);
+              Log.e("BIS", "BIS");
+              httpCall("http://192.168.1.136/Chat_Android/getmessage.php");
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
+          }
+        }
+      });
+      new Thread(background).start();
+
+
+  };
+
 
   public void httpCall(String url) {
 
