@@ -44,7 +44,7 @@ public class conversations extends AppCompatActivity {
     }
 
     public void openActivity5() {
-        Intent conversations_liste = new Intent(this, conversations_liste.class);
+        Intent conversations_liste = new Intent(this, client.class);
         startActivity(conversations_liste);
         finish();
     }
