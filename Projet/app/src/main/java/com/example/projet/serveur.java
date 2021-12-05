@@ -22,7 +22,7 @@ public class serveur extends AppCompatActivity {
         final Scanner sc=new Scanner(System.in);
 
         try {
-            serveurSocket = new ServerSocket(5000);
+            serveurSocket = new ServerSocket(80);
             clientSocket = serveurSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream());
             in = new BufferedReader (new InputStreamReader (clientSocket.getInputStream()));

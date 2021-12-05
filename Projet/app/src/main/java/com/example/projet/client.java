@@ -46,7 +46,7 @@ public class client extends AppCompatActivity {
              * les informations du serveur ( port et adresse IP ou nom d'hote
              * 127.0.0.1 est l'adresse local de la machine
              */
-            clientSocket = new Socket("http://192.168.1.16/Chat_Android/getmessage.php",80);
+            clientSocket = new Socket("192.168.1.16",80);
 
             //flux pour envoyer
             out = new PrintWriter(clientSocket.getOutputStream());

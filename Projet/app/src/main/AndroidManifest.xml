@@ -46,11 +46,11 @@
             android:exported="true">
         </activity>
       <activity
-         android:name=".parametres"
+         android:name="parametres"
          android:exported="true">
       </activity>
       <activity
-        android:name=".parametres_informations_personnelles"
+        android:name="parametres_informations_personnelles"
         android:exported="true">
       </activity>
 
