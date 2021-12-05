@@ -33,8 +33,6 @@ public class conversations_liste extends AppCompatActivity {
       // Demarrage du thread pour actualiser les messages
       get();
 
-
-
     };
 
 

@@ -1,0 +1,1 @@
+INSERT INTO `messages`(`messages`, `user`) VALUES ('A tout à l\'heure en cours !', 'Arthur');
